@@ -66,7 +66,7 @@ function buildForecast(daily) {
     max: Math.round(daily.temperature_2m_max[index]),
     weatherCode: daily.weather_code[index],
   }))
-}
+ } 
 
 async function fetchWeatherByCity(city) {
   const geocodeResponse = await fetch(

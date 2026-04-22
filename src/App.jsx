@@ -9,7 +9,7 @@ const WEATHER_CODES = {
   45: { label: 'Brouillard', icon: '🌫️' },
   48: { label: 'Brouillard givrant', icon: '🌫️' },
   51: { label: 'Bruine legere', icon: '🌦️' },
-  53: { label: 'Bruine moderee', icon: '🌦️' },
+  53: { label:  'Bruine moderee', icon: '🌦️' },
   55: { label: 'Bruine dense', icon: '🌧️' },
   56: { label: 'Bruine verglacante legere', icon: '🌧️' },
   57: { label: 'Bruine verglacante dense', icon: '🌧️' },
@@ -64,7 +64,7 @@ function buildForecast(daily) {
     date,
     min: Math.round(daily.temperature_2m_min[index]),
     max: Math.round(daily.temperature_2m_max[index]),
-    weatherCode: daily.weather_code[index],
+    weatherCode: daily.weather_code[index] ,
   }))
  } 
 
@@ -92,7 +92,7 @@ async function fetchWeatherByCity(city) {
     throw new Error('service-unavailable')
   }
 
-  const forecastData = await forecastResponse.json()
+  const forecastData = await  forecastResponse.json()
 
   return {
     location,
@@ -104,7 +104,7 @@ function App() {
   const [query, setQuery] = useState(DEFAULT_CITY)
   const [weather, setWeather] = useState(null)
   const [status, setStatus] = useState('idle')
-  const [error, setError] = useState('')
+  const [error,  setError] = useState('')
 
   async function loadWeather(city) {
     setStatus('loading')
